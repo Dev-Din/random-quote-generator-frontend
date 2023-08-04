@@ -36,7 +36,7 @@ function App() {
      // Update the state with the new quote received from the server
      setQuote(data.quote);
      setAuthor(data.author);
-   } catch (error) {
+   } catch (erro) {
      console.error('Error creating quote:', error);
    }
  };
