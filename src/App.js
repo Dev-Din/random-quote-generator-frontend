@@ -64,7 +64,19 @@ function App() {
  };
  
  const deleteQuote = async () => {
-   
+   try {
+     // Replace quoteId with the ID of the quote you want to delete
+     const quoteId = 1; // Replace with the actual ID of the quote to be deleted
+     const response = await fetch(`/quotes/${quoteId}`, {
+       method: 'DELETE',
+     });
+     await response.json();
+     // Clear the state for the deleted quote
+     setQuote('');
+     setAuthor('');
+   } catch (error) {
+     console.error('Error deleting quote:', error);
+   }
  };
 
   return (
