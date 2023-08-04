@@ -7,6 +7,17 @@ function App() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
 
+  const fetchRandomQuote = async () => {
+    try {
+      const response = await fetch('https://type.fit/api/quotes');
+      const data = await response.json();
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setQuote(data[randomIndex].text);
+      setAuthor(data[randomIndex].author || 'Unknown Author');
+    } 
+  };
+
+ 
 
     <div className="App">
       <header className="App-header">
