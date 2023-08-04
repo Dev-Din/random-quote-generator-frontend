@@ -1,5 +1,3 @@
-Sure, here are separate README files for the frontend and backend:
-
 ## Frontend
 
 # Quote Generator Frontend
