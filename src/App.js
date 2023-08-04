@@ -46,8 +46,7 @@ function App() {
      const updatedQuote = {
        quote: "Updated quote text here",
      };
-     // Replace quoteId with the ID of the quote you want to update
-     const quoteId = 1; // Replace with the actual ID of the quote to be updated
+     const quoteId = 1; 
      const response = await fetch(`/quotes/${quoteId}`, {
        method: 'PUT',
        headers: {
@@ -56,7 +55,6 @@ function App() {
        body: JSON.stringify(updatedQuote),
      });
      const data = await response.json();
-     // Update the state with the updated quote received from the server
      setQuote(data.quote);
    } catch (error) {
      console.error('Error updating quote:', error);
@@ -65,13 +63,11 @@ function App() {
  
  const deleteQuote = async () => {
    try {
-     // Replace quoteId with the ID of the quote you want to delete
      const quoteId = 1; // Replace with the actual ID of the quote to be deleted
      const response = await fetch(`/quotes/${quoteId}`, {
        method: 'DELETE',
      });
      await response.json();
-     // Clear the state for the deleted quote
      setQuote('');
      setAuthor('');
    } catch (error) {
