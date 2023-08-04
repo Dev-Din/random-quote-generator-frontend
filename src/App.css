@@ -13,3 +13,28 @@
  font-size: calc(10px + 2vmin);
  color: white;
 }
+
+h1 {
+ margin-bottom: 20px;
+}
+
+blockquote {
+ font-size: 24px;
+ font-style: italic;
+}
+
+cite {
+ font-size: 16px;
+ margin-top: 5px;
+}
+
+button {
+ margin: 10px;
+ padding: 10px 20px;
+ font-size: 16px;
+}
+
+button:disabled {
+ background-color: #c0c0c0;
+ cursor: not-allowed;
+}
