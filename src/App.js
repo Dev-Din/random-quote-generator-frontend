@@ -14,7 +14,9 @@ function App() {
       const randomIndex = Math.floor(Math.random() * data.length);
       setQuote(data[randomIndex].text);
       setAuthor(data[randomIndex].author || 'Unknown Author');
-    } 
+    } catch (error) {
+      console.error('Error fetching quote:', error);
+    }
   };
 
  
