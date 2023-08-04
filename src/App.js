@@ -19,7 +19,18 @@ function App() {
     }
   };
 
+  const createQuote = async () => {
  
+ };
+ 
+ const updateQuote = async () => {
+
+ };
+ 
+ const deleteQuote = async () => {
+
+ };
+
 
     <div className="App">
       <header className="App-header">
