@@ -20,18 +20,36 @@ function App() {
   };
 
   const createQuote = async () => {
- 
+   try {
+     const newQuote = {
+       quote: "Your quote text here",
+       author: "Author's name here",
+     };
+     const response = await fetch('/quotes', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify(newQuote),
+     });
+     const data = await response.json();
+     // Update the state with the new quote received from the server
+     setQuote(data.quote);
+     setAuthor(data.author);
+   } catch (error) {
+     console.error('Error creating quote:', error);
+   }
  };
  
  const updateQuote = async () => {
-
+   
  };
  
  const deleteQuote = async () => {
-
+   
  };
 
-
+  return (
     <div className="App">
       <header className="App-header">
         <h1>Random Quote Generator</h1>
@@ -42,7 +60,7 @@ function App() {
         <Button text="Delete Quote" onClick={deleteQuote} />
       </header>
     </div>
- 
+  );
 }
 
 export default App;
