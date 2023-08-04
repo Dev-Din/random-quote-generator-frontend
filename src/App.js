@@ -36,13 +36,31 @@ function App() {
      // Update the state with the new quote received from the server
      setQuote(data.quote);
      setAuthor(data.author);
-   } catch (erro) {
+   } catch (error) {
      console.error('Error creating quote:', error);
    }
  };
  
  const updateQuote = async () => {
-   
+   try {
+     const updatedQuote = {
+       quote: "Updated quote text here",
+     };
+     // Replace quoteId with the ID of the quote you want to update
+     const quoteId = 1; // Replace with the actual ID of the quote to be updated
+     const response = await fetch(`/quotes/${quoteId}`, {
+       method: 'PUT',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify(updatedQuote),
+     });
+     const data = await response.json();
+     // Update the state with the updated quote received from the server
+     setQuote(data.quote);
+   } catch (error) {
+     console.error('Error updating quote:', error);
+   }
  };
  
  const deleteQuote = async () => {
